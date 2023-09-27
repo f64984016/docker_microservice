@@ -6,16 +6,24 @@ services:
 #    ports:
 #      - "8000:80"
 #    depends_on:
-#      - db
-   db:
-    image: mcr.microsoft.com/mssql/server:2017-latest
-    environment:
-      - SA_PASSWORD=P@ssw0rd
-      - ACCEPT_EULA=Y
-    ports:
-      - "1433:1433"
-    volumes:
-      - db_data:/var/opt/mssql/data
-volumes:
-  db_data:
+#      - mssql
+#   mssql:
+#    image: mcr.microsoft.com/mssql/server:2017-latest
+#    environment:
+#      - SA_PASSWORD=P@ssw0rd
+#      - ACCEPT_EULA=Y
+#    ports:
+#      - "1433:1433"
+#    volumes:
+#      - mssql_data:/var/opt/mssql/data
+   mongo:
+     image: mongo
+     restart: always
+     environment:
+       MONGO_INITDB_ROOT_USERNAME: root
+       MONGO_INITDB_ROOT_PASSWORD: P@ssw0rd
+     ports:
+       - "27017:27017"
+#volumes:
+#  mssql_data:
 #  wp_data:
