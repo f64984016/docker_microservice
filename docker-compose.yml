@@ -26,6 +26,14 @@ services:
        - "27017:27017"
      volumes:
        - mongo_data:/data/db
+   mqtt:
+     image: eclipse-mosquitto
+     ports:
+       - "1883:1883"
+       - "9001:9001"
+     volumes:
+       - mosquitto.conf:/mosquitto/config/mosquitto.conf
+
 volumes:
 #  mssql_data:
   mongo_data:
