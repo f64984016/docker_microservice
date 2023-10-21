@@ -53,7 +53,7 @@ services:
    sftp:
      image: atmoz/sftp
      ports:
-       - "2222:22" 
+       - "2222:22"
      command: username:P@ssw0rd:::upload
 volumes:
   mssql_data:
