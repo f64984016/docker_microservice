@@ -50,6 +50,13 @@ services:
 # also for ssl/tls:
 #      ADDED_FLAGS: "--tls=2"
      restart: always
+   sftp:
+     image: atmoz/sftp
+     ports:
+       - "2222:22"
+     volumes: 
+       - "./sftp/upload:/home/username/upload" 
+     command: username:P@ssw0rd:::upload
 volumes:
   mssql_data:
   mongo_data:
