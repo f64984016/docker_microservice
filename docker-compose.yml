@@ -30,7 +30,7 @@ services:
        - ./passwd_file:/mosquitto/config/passwd_file
    ftpd_server:
      image: stilliard/pure-ftpd:latest
-     container_name: pure-ftpd
+     #container_name: pure-ftpd
      ports:
        - "21:21"
        - "30000-30009:30000-30009"
